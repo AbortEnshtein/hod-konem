@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ход конём — настольные игры в СПб</title>
+    <style>
+      :root {
+        --color-primary: #f7d794;
+        --color-secondary: #333;
+        --color-background: #fafafa;
+        --color-text: #333;
+        --color-link: #f7d794;
+        --color-link-hover: #e6c377;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: var(--color-background);
+        color: var(--color-text);
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+      header {
+        background: linear-gradient(
+          135deg,
+          var(--color-primary),
+          #f2c94c
+        );
+        padding: 1.5rem 0;
+        text-align: center;
+      }
+      nav {
+        background-color: var(--color-secondary);
+        padding: 0.5rem 0;
+        text-align: center;
+      }
+      nav a {
+        color: var(--color-background);
+        margin: 0 1rem;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      nav a:hover {
+        color: var(--color-link-hover);
+      }
+      .hero {
+        background: url("https://via.placeholder.com/1200x400/cccccc/666666/?text=Hero+Image")
+          no-repeat center/cover;
+        color: #fff;
+        padding: 3rem 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 400px;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+      .hero p {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+      }
+      .hero button {
+        background-color: var(--color-primary);
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 0.25rem;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      .hero button:hover {
+        background-color: var(--color-link-hover);
+      }
+      .about {
+        padding: 2rem 0;
+        text-align: center;
+      }
+      .about h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+      }
+      .advantages {
+        display: grid;
+        gap: 1.5rem;
+        padding: 2rem 0;
+      }
+      @media (min-width: 768px) {
+        .advantages {
+          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        }
+      }
+      .advantages-item {
+        background-color: #fff;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+        text-align: center;
+      }
+      .advantages-item h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+      }
+      .games {
+        display: grid;
+        gap: 1.5rem;
+        padding: 2rem 0;
+      }
+      @media (min-width: 768px) {
+        .games {
+          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        }
+      }
+      .game-card {
+        background-color: #fff;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        transition: transform 0.3s;
+      }
+      .game-card:hover {
+        transform: translateY(-5px);
+      }
+      .game-card img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .game-card-content {
+        padding: 1rem;
+      }
+      .schedule {
+        padding: 2rem 0;
+      }
+      .schedule table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .schedule th,
+      .schedule td {
+        padding: 0.5rem;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+      .reviews {
+        padding: 2rem 0;
+      }
+      .review-card {
+        background-color: #fff;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .review-card p {
+        margin-bottom: 0.5rem;
+      }
+      .review-card .author {
+        font-style: italic;
+        color: #666;
+      }
+      footer {
+        background-color: var(--color-secondary);
+        color: var(--color-background);
+        padding: 1rem 0;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Шапка -->
+    <header>
+      <div class="container">
+        <h1>Ход конём</h1>
+        <p>Настольные игры в Санкт-Петербурге</p>
+      </div>
+    </header>
+
+    <!-- Меню -->
+    <nav>
+      <div class="container">
+        <a href="#about">О клубе</a>
+        <a href="#advantages">Преимущества</a>
+        <a href="#games">Каталог игр</a>
+        <a href="#schedule">Расписание</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#contacts">Контакты</a>
+      </div>
+    </nav>
+
+    <!-- Главный экран с CTA -->
+    <section class="hero">
+      <div class="container">
+        <h1>Играем в настолки и отдыхаем от учёбы</h1>
+        <p>Студенты 17–24 лет, ищущие компанию, отдых от учёбы и новые игры.</p>
+        <button>Записаться на вечер</button>
+      </div>
+    </section>
+
+    <!-- О клубе -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2>О клубе</h2>
+        <p>
+          В клубе «Ход конём» мы собираемся, чтобы отдохнуть от учёбы, найти новых друзей и поиграть в настольные игры.
+          У нас уютная атмосфера, дружелюбная компания и всегда есть с кем обсудить новую партию.
+        </p>
+      </div>
+    </section>
+
+    <!-- Преимущества клуба -->
+    <section id="advantages" class="advantages">
+      <div class="container">
+        <h2>Преимущества клуба</h2>
+        <div class="advantages-item">
+          <h3>Уютная атмосфера</h3>
+          <p>Мы создаём комфортную обстановку для общения и игр.</p>
+        </div>
+        <div class="advantages-item">
+          <h3>Разнообразие игр</h3>
+          <p>У нас большой выбор настольных игр на любой вкус.</p>
+        </div>
+        <div class="advantages-item">
+          <h3>Дружелюбная компания</h3>
+          <p>Мы всегда рады новым участникам и помогаем освоиться.</p>
+        </div>
+        <div class="advantages-item">
+          <h3>Отдых от учёбы</h3>
+          <p>Идеальное место, чтобы отвлечься и перезагрузиться.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Каталог игр -->
+    <section id="games" class="games">
+      <div class="container">
+        <h2>Каталог игр</h2>
+        <a href="#" class="game-card">
+          <img src="https://via.placeholder.com/300x200/cccccc/666666/?text=Game+1"
+            alt="Игра 1"/>
+          <div class="game-card-content">
+            <h3>Игра 1</h3>
+            <p>Короткое описание игры 1.</p>
+            <p>Игроков: 2–4</p>
+            <p>Время: 60 мин</p>
+          </div>
+        </a>
+        <a href="#" class="game-card">
+          <img src="https://via.placeholder.com/300x200/cccccc/666666/?text=Game+2"
+            alt="Игра 2"/>
+          <div class="game-card-content">
+            <h3>Игра 2</h3>
+            <p>Короткое описание игры 2.</p>
+            <p>Игроков: 3–6</p>
+            <p>Время: 90 мин</p>
+          </div>
+        </a>
+<!-- Добавьте ещё 4 карточки по аналогии -->
+      </div>
+    </section>
+
+    <!-- Расписание игровых вечеров -->
+    <section id="schedule" class="schedule">
+      <div class="container">
+        <h2>Расписание игровых вечеров</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>День недели</th>
+              <th>Время</th>
+              <th>Место</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Понедельник</td>
+              <td>19:00 – 22:00</td>
+              <td>Коворкинг «Гамбит», ул. Большая Конюшенная, 15</td>
+            </tr>
+            <tr>
+              <td>Среда</td>
+              <td>18:00 – 21:00</td>
+              <td>Кафе «Шах и мат», ул. Рубинштейна, 32</td>
+            </tr>
+<!-- Добавьте ещё дни по аналогии -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section id="reviews" class="reviews">
+      <div class="container">
+        <h2>Отзывы</h2>
+        <div class="review-card">
+          <p>Отличный клуб! Всегда приятно провести время в компании новых друзей и поиграть в настолки.</p>
+          <p class="author">Анна, студентка</p>
+        </div>
+        <div class="review-card">
+          <p>Ход конём — это лучшее место, чтобы отвлечься от учёбы и найти новых знакомых.</p>
+          <p class="author">Дмитрий, студент</p>
+        </div>
+<!-- Добавьте ещё 1–2 карточки отзывов по аналогии -->
+      </div>
+    </section>
+
+    <!-- Контакты -->
+    <footer id="contacts" class="container">
+      <h2>Контакты</h2>
+      <p>Санкт-Петербург, ул. Большая Конюшенная, 15</p>
+      <p>Telegram: @hod_konem_spb</p>
+      <p>VK: vk.com/hod_konem_spb</p>
+      <p>Запись на вечер:
+        <a href="#" style="color: var(--color-link);">Записаться</a>
+      </p>
+    </footer>
+  </body>
+</html>
